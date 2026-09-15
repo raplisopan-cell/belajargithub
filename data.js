@@ -52,8 +52,4 @@ const peminjaman = [
     }
 ];
 
-module.exports = {
-    penulis,
-    buku,
-    peminjaman
-};
+export { penulis, buku, peminjaman};

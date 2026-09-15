@@ -1,0 +1,9 @@
+[
+  {
+    "id": 1,
+    "bookId": 1,
+    "borrower": "Rapli",
+    "date": "2026-09-15",
+    "returned": false
+  }
+]

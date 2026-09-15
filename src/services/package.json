@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "type": "module",
   "description": "Program perpustakaan menggunakan Node.js modular",
+  "main": "src/index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node src/index.js"
   }
 }
