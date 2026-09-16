@@ -23,3 +23,9 @@ export async function writeJson(filePath, data) {
     throw error;
   }
 }
+import { readFile } from "fs/promises";
+
+export async function readJson(filePath) {
+    const text = await readFile(filePath, "utf-8");
+    return JSON.parse(text);
+}
