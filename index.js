@@ -24,11 +24,11 @@ const me = [
         umur: 17
     }
 ];
-
 app.get("/me", (req, res) => {
     res.json(me);
 });
 
+// Route semua buku dari Supabase
 app.get("/books", async (req, res) => {
     const { data, error } = await supabase
         .from("books")
