@@ -1,0 +1,747 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+}
+
+
+body {
+
+    min-height: 100vh;
+
+    background: #050505;
+
+    color: white;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    overflow-x: hidden;
+}
+
+
+
+.background {
+
+    position: fixed;
+
+    inset: -5%;
+
+    width: 110%;
+    height: 110%;
+
+    z-index: -5;
+
+    background-image:
+        url("bg.jpg");
+
+    background-size: cover;
+
+    background-position: center;
+
+    background-repeat: no-repeat;
+
+    animation:
+        backgroundMove
+        18s
+        ease-in-out
+        infinite
+        alternate;
+}
+
+
+.background::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        rgba(0, 0, 0, .35);
+}
+
+
+.background::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0, 0, 0, .88),
+            rgba(0, 0, 0, .45),
+            rgba(0, 0, 0, .82)
+        );
+}
+
+
+@keyframes backgroundMove {
+
+    0% {
+
+        transform:
+            scale(1);
+
+        background-position:
+            center center;
+
+    }
+
+    100% {
+
+        transform:
+            scale(1.08);
+
+        background-position:
+            center 45%;
+
+    }
+
+}
+
+
+
+.grid {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: -2;
+
+    pointer-events: none;
+
+    opacity: .12;
+
+    background-size:
+        70px 70px;
+
+    background-image:
+
+        linear-gradient(
+            rgba(255,255,255,.15)
+            1px,
+            transparent 1px
+        ),
+
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,.15)
+            1px,
+            transparent 1px
+        );
+
+    animation:
+        gridMove
+        20s
+        linear
+        infinite;
+}
+
+
+@keyframes gridMove {
+
+    0% {
+
+        transform:
+            translate(0, 0);
+
+    }
+
+    50% {
+
+        transform:
+            translate(35px, 35px);
+
+    }
+
+    100% {
+
+        transform:
+            translate(0, 0);
+
+    }
+
+}
+
+
+
+.login-container {
+
+    min-height: 100vh;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 30px;
+
+}
+
+
+/* =========================
+   LOGIN BOX
+========================= */
+
+.login-box {
+
+    width: 100%;
+
+    max-width: 470px;
+
+    padding: 50px;
+
+    position: relative;
+
+    background:
+        rgba(8, 8, 8, .68);
+
+    border:
+        1px solid
+        rgba(255,255,255,.16);
+
+    backdrop-filter:
+        blur(18px);
+
+    -webkit-backdrop-filter:
+        blur(18px);
+
+    box-shadow:
+        0 30px 100px
+        rgba(0,0,0,.65);
+
+    animation:
+        boxAppear
+        .9s
+        cubic-bezier(.2,.8,.2,1)
+        both;
+}
+
+
+@keyframes boxAppear {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(40px)
+            scale(.96);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+
+    }
+
+}
+
+
+
+.login-box::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: -1px;
+    left: -1px;
+
+    width: 60px;
+    height: 60px;
+
+    border-top:
+        2px solid white;
+
+    border-left:
+        2px solid white;
+
+    opacity: .7;
+}
+
+
+.login-box::after {
+
+    content: "";
+
+    position: absolute;
+
+    bottom: -1px;
+    right: -1px;
+
+    width: 60px;
+    height: 60px;
+
+    border-bottom:
+        2px solid white;
+
+    border-right:
+        2px solid white;
+
+    opacity: .7;
+}
+
+
+.top-label {
+
+    font-size: 10px;
+
+    letter-spacing: 5px;
+
+    color: #888;
+
+    margin-bottom: 35px;
+}
+
+
+.login-box h1 {
+
+    font-size:
+        clamp(50px, 8vw, 75px);
+
+    line-height: .85;
+
+    letter-spacing:
+        -4px;
+
+    font-weight: 900;
+
+    margin-bottom: 20px;
+
+}
+
+
+.login-box h1 span {
+
+    display: block;
+
+    color: #666;
+
+}
+
+
+.subtitle {
+
+    color: #999;
+
+    font-size: 13px;
+
+    line-height: 1.6;
+
+    margin-bottom: 40px;
+
+}
+
+
+.input-group {
+
+    margin-bottom: 25px;
+
+}
+
+
+.input-group label {
+
+    display: block;
+
+    margin-bottom: 9px;
+
+    font-size: 9px;
+
+    letter-spacing: 3px;
+
+    color: #888;
+
+}
+
+
+.input-group input {
+
+    width: 100%;
+
+    height: 52px;
+
+    padding:
+        0 16px;
+
+    border:
+        1px solid
+        rgba(255,255,255,.18);
+
+    outline: none;
+
+    background:
+        rgba(255,255,255,.05);
+
+    color: white;
+
+    font-size: 14px;
+
+    transition:
+        border .3s,
+        background .3s,
+        box-shadow .3s;
+}
+
+
+.input-group input::placeholder {
+
+    color: #666;
+
+}
+
+
+.input-group input:focus {
+
+    border-color:
+        rgba(255,255,255,.7);
+
+    background:
+        rgba(255,255,255,.08);
+
+    box-shadow:
+        0 0 25px
+        rgba(255,255,255,.05);
+
+}
+
+
+.password-wrapper {
+
+    position: relative;
+
+}
+
+
+.password-wrapper input {
+
+    padding-right: 55px;
+
+}
+
+
+.show-password {
+
+    position: absolute;
+
+    top: 50%;
+    right: 15px;
+
+    transform:
+        translateY(-50%);
+
+    border: none;
+
+    background: transparent;
+
+    color: #aaa;
+
+    cursor: pointer;
+
+    font-size: 17px;
+
+    transition: .3s;
+
+}
+
+
+.show-password:hover {
+
+    color: white;
+
+    transform:
+        translateY(-50%)
+        scale(1.1);
+
+}
+
+
+.login-button {
+
+    width: 100%;
+
+    height: 55px;
+
+    margin-top: 10px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding:
+        0 20px;
+
+    border:
+        1px solid white;
+
+    background: white;
+
+    color: black;
+
+    cursor: pointer;
+
+    font-weight: 700;
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+
+    transition:
+        .35s
+        cubic-bezier(.2,.8,.2,1);
+}
+
+
+.login-button span:last-child {
+
+    font-size: 20px;
+
+    transition: .35s;
+
+}
+
+
+.login-button:hover {
+
+    background: transparent;
+
+    color: white;
+
+}
+
+
+.login-button:hover span:last-child {
+
+    transform:
+        translateX(8px);
+
+}
+
+
+#message {
+
+    min-height: 22px;
+
+    margin-top: 20px;
+
+    text-align: center;
+
+    font-size: 12px;
+
+}
+
+
+
+#userData {
+
+    text-align: center;
+
+}
+
+
+#userData h3 {
+
+    margin-top: 10px;
+
+    margin-bottom: 15px;
+
+    font-size: 15px;
+
+    letter-spacing: 1px;
+
+}
+
+
+#logoutButton {
+
+    width: 100%;
+
+    height: 45px;
+
+    margin-top: 10px;
+
+    border:
+        1px solid #555;
+
+    background:
+        transparent;
+
+    color: white;
+
+    cursor: pointer;
+
+    font-size: 9px;
+
+    letter-spacing: 3px;
+
+    transition: .3s;
+
+}
+
+
+#logoutButton:hover {
+
+    background: white;
+
+    color: black;
+
+}
+
+
+.security {
+
+    margin-top: 30px;
+
+    padding-top: 20px;
+
+    border-top:
+        1px solid
+        rgba(255,255,255,.1);
+
+    text-align: center;
+
+    color: #666;
+
+    font-size: 9px;
+
+    letter-spacing: 1px;
+
+}
+
+
+.security span {
+
+    margin-right: 5px;
+
+}
+
+
+
+.back-button {
+
+    display: block;
+
+    margin-top: 25px;
+
+    text-align: center;
+
+    color: #777;
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+
+    transition: .3s;
+
+}
+
+
+.back-button:hover {
+
+    color: white;
+
+}
+
+
+
+@media (max-width: 600px) {
+
+    .login-container {
+
+        padding: 20px;
+
+    }
+
+
+    .login-box {
+
+        padding: 35px 25px;
+
+    }
+
+
+    .login-box h1 {
+
+        font-size: 55px;
+
+    }
+
+}
+
+
+@media (max-width: 380px) {
+
+    .login-box {
+
+        padding: 30px 20px;
+
+    }
+
+
+    .login-box h1 {
+
+        font-size: 45px;
+
+    }
+
+}
+
+/* =========================
+   LOGOUT BUTTON
+========================= */
+
+.logout-button {
+    display: none;
+
+    padding: 10px 24px;
+
+    border: 1px solid rgba(255, 255, 255, 0.4);
+
+    background: transparent;
+
+    color: white;
+
+    font-family: inherit;
+
+    font-size: 12px;
+
+    letter-spacing: 2px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+
+.logout-button:hover {
+
+    background: white;
+
+    color: black;
+
+}

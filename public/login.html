@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+
+<html lang="id">
+
+<head>
+
+
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<title>HALAMAN LOGIN</title>
+
+<link rel="stylesheet" href="style.css">
+
+
+</head>
+
+<body>
+
+<div class="background">
+
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+
+</div>
+
+
+<div class="grid"></div>
+
+
+<main class="app">
+
+    <section class="login-container">
+
+        <div class="login-box">
+
+
+            <div class="app-logo">
+                <span>⚡</span>
+            </div>
+
+
+            <div class="title-wrapper">
+
+                <h1>
+                    HALAMAN LOGIN
+                </h1>
+
+                <div class="title-line"></div>
+
+            </div>
+
+
+            <p class="subtitle">
+
+                Selamat datang kembali 👋
+                <br>
+                Silakan login untuk melanjutkan
+
+            </p>
+
+
+            <form id="loginForm">
+
+
+                <div class="input-group">
+
+                    <label for="email">
+                        EMAIL
+                    </label>
+
+                    <div class="input-wrapper">
+
+                        <span class="input-icon">
+                            ✉
+                        </span>
+
+                        <input
+                            type="email"
+                            id="email"
+                            placeholder="Masukkan email"
+                            autocomplete="email"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <div class="input-group">
+
+                    <label for="password">
+                        PASSWORD
+                    </label>
+
+                    <div class="input-wrapper">
+
+                        <span class="input-icon">
+                            🔒
+                        </span>
+
+                        <input
+                            type="password"
+                            id="password"
+                            placeholder="Masukkan password"
+                            autocomplete="current-password"
+                            required
+                        >
+
+                        <button
+                            type="button"
+                            class="show-password"
+                            id="showPassword"
+                        >
+                            👁
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="login-button"
+                >
+
+                    <span>LOGIN</span>
+                    <span class="arrow">→</span>
+
+                </button>
+
+
+            </form>
+
+
+            <p id="message"></p>
+
+
+            <div id="userData"></div>
+
+
+            <div class="security-text">
+                🔐 Login diamankan dengan JWT
+            </div>
+
+
+            <a
+                href="index.html"
+                class="back-button"
+            >
+                ← KEMBALI KE RAPLIART
+            </a>
+
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<script src="script.js"></script>
+
+
+</body>
+
+</html>
